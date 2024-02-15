@@ -1,7 +1,7 @@
 # Личный проект «Шесть городов»
 
 - Студент: [Алена Алексенко](https://up.htmlacademy.ru/react/15/user/2123945).
-- Наставник: `Юлия Волкова`.
+- Наставник: [Юлия Волкова](https://htmlacademy.ru/profile/julie_volkova)
 
 ---
 
