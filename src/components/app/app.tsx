@@ -12,7 +12,7 @@ import Page404 from '../../pages/page-404/page-404';
 import { getAuthorisationStatus } from '../../utils';
 import ScrollToTop from '../scroll-to-top/scroll-to-top';
 
-function App({ offerCount, cards }: MainPageScreenProps): JSX.Element {
+function App({ offerCount, offers }: MainPageScreenProps): JSX.Element {
   const authorisationStatus = getAuthorisationStatus();
   return (
     <HelmetProvider>
@@ -25,14 +25,14 @@ function App({ offerCount, cards }: MainPageScreenProps): JSX.Element {
           >
             <Route
               index
-              element={<MainPage offerCount={offerCount} cards={cards} />}
+              element={<MainPage offerCount={offerCount} offers={offers} />}
             />
             <Route path={AppRoute.OfferPage} element={<OfferPage />} />
             <Route
               path={AppRoute.FavouritesPage}
               element={
                 <PrivateRoute authorisationStatus={authorisationStatus}>
-                  <FavouritesPage />
+                  <FavouritesPage offers={offers} />
                 </PrivateRoute>
               }
             />

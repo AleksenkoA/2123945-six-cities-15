@@ -1,8 +1,8 @@
 import { Helmet } from 'react-helmet-async';
-import CitiesList from '../../components/cities-list/cities-list';
 import { CityItemProps } from '../../shared-types';
+import LocationsList from '../../components/cities-list/cities-list';
 
-function MainEmpty({city} : CityItemProps): JSX.Element {
+function MainEmpty({ city }: CityItemProps): JSX.Element {
   return (
     <>
       <Helmet>
@@ -12,7 +12,7 @@ function MainEmpty({city} : CityItemProps): JSX.Element {
         <h1 className="visually-hidden">Cities</h1>
         <div className="tabs">
           <section className="locations container">
-            <CitiesList/>
+            <LocationsList />
           </section>
         </div>
         <div className="cities">
@@ -21,8 +21,8 @@ function MainEmpty({city} : CityItemProps): JSX.Element {
               <div className="cities__status-wrapper tabs__content">
                 <b className="cities__status">No places to stay available</b>
                 <p className="cities__status-description">
-                We could not find any property available at the moment in
-                  {city}
+                  We could not find any property available at the moment in
+                  {city.name}
                 </p>
               </div>
             </section>

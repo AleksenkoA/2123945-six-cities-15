@@ -2,7 +2,31 @@ import { CITIES, OPTIONS } from './const';
 
 export type MainPageScreenProps = {
   offerCount: number;
-  cards: CardsItemProps;
+  offers: OfferType[];
+};
+
+export type CitiesType = {
+  name: string;
+  isActive: boolean;
+};
+
+export type OfferType = {
+  id: number | string;
+  title: string;
+  type: string;
+  price: number;
+  city: CitiesType;
+  location: LocationType;
+  images: string[];
+  description: string;
+  bedrooms: number;
+  goods: string[];
+  maxAdults: number;
+  comments: ReviewItemType[];
+  rating: number;
+  previewImage: string;
+  isPremium: boolean;
+  isFavorite: boolean;
 };
 
 export type RentType = 'apartment' | 'room' | 'house' | 'hotel';
@@ -78,4 +102,10 @@ export type RatingItemProps = {
 export type RatingType = {
   value: string;
   title: string;
+};
+
+export type LocationType = {
+  latitude: number;
+  longitude: number;
+  zoom: number;
 };

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import CitiesList from '../cities-list/cities-list';
 import Logo from '../logo/logo';
 import { AppRoute } from '../../const';
+import LocationsList from '../cities-list/cities-list';
 
 function HeaderMain(): JSX.Element {
   return (
@@ -34,7 +34,7 @@ function HeaderMain(): JSX.Element {
           </nav>
         </div>
       </div>
-      <CitiesList />
+      <LocationsList />
     </header>
   );
 }

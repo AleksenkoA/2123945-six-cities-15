@@ -1,8 +1,51 @@
-import { RatingType } from './shared-types';
-
 export const Setting = {
   OfferCount: 312,
 };
+
+export const AppRoute = {
+  Root: '/',
+  OfferPage: '/offer/:id',
+  FavouritesPage: '/favourites',
+  LoginPage: '/login',
+} as const;
+
+export const AuthorisationStatus = {
+  Auth: 'AUTH',
+  NoAuth: 'NO_AUTH',
+  Unknown: 'UNKNOWN',
+} as const;
+
+export type CitiesType = {
+  name: string;
+  isActive: boolean;
+};
+
+export const CITIES: CitiesType[] = [
+  {
+    name: 'Paris',
+    isActive: false,
+  },
+  {
+    name: 'Cologne',
+    isActive: false,
+  },
+  {
+    name: 'Brussels',
+    isActive: false,
+  },
+  {
+    name: 'Amsterdam',
+    isActive: true,
+  },
+  {
+    name: 'Hamburg',
+    isActive: false,
+  },
+  {
+    name: 'Dusseldorf',
+    isActive: false,
+  },
+];
 
 export const RATINGS: RatingType[] = [
   {
@@ -27,21 +70,34 @@ export const RATINGS: RatingType[] = [
   },
 ];
 
-export const CITIES = [
-  'Paris',
-  'Cologne',
-  'Brussels',
-  'Amsterdam',
-  'Hamburg',
-  'Dusseldorf',
-] as const;
+export type SortType = {
+  name: string;
+  isActive: boolean;
+};
 
-export const OPTIONS = [
-  'Popular',
-  'Price: low to high',
-  'Price: high to low',
-  'Top rated first',
-] as const;
+export const OPTIONS: SortType[] = [
+  {
+    name: 'Popular',
+    isActive: true,
+  },
+  {
+    name: 'Price: low to high',
+    isActive: false,
+  },
+  {
+    name: 'Price: high to low',
+    isActive: false,
+  },
+  {
+    name: 'Top rated first',
+    isActive: false,
+  },
+];
+
+export type RatingType = {
+  value: string;
+  title: string;
+};
 
 export const INSIDE_OFFERS = [
   'Wi-Fi',
@@ -79,16 +135,3 @@ export const REVIEWS = [
     rating: 4,
   },
 ];
-
-export const AppRoute = {
-  Root: '/',
-  OfferPage: '/offer/:id',
-  FavouritesPage: '/favourites',
-  LoginPage: '/login',
-} as const;
-
-export const AuthorisationStatus = {
-  Auth: 'AUTH',
-  NoAuth: 'NO_AUTH',
-  Unknown: 'UNKNOWN',
-} as const;

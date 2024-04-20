@@ -1,12 +1,12 @@
-import CitiesList from '../../components/cities-list/cities-list';
 import OptionsList from '../../components/sorting/sorting';
 import Map from '../../components/map/map';
 import CardsList from '../../components/cards-list/cards-list';
 import SortingHeader from '../../components/sorting-header/sorting-header';
 import { MainPageScreenProps } from '../../shared-types';
 import { Helmet } from 'react-helmet-async';
+import LocationsList from '../../components/cities-list/cities-list';
 
-function MainPage({ offerCount, cards }: MainPageScreenProps): JSX.Element {
+function MainPage({ offerCount, offers }: MainPageScreenProps): JSX.Element {
   return (
     <>
       <Helmet>
@@ -17,14 +17,14 @@ function MainPage({ offerCount, cards }: MainPageScreenProps): JSX.Element {
           <h1 className="visually-hidden">Cities</h1>
           <div className="tabs">
             <section className="locations container">
-              <CitiesList />
+              <LocationsList />
             </section>
           </div>
           <div className="cities">
             <div className="cities__places-container container">
               <section className="cities__places places">
                 <h2 className="visually-hidden">Places</h2>
-                <SortingHeader offerCount={offerCount} cards={cards} />
+                <SortingHeader offerCount={offerCount} offers={offers} />
                 <form className="places__sorting" action="#" method="get">
                   <span className="places__sorting-caption">Sort by</span>
                   <span className="places__sorting-type" tabIndex={0}>
