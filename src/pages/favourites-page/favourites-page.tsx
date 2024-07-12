@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { OfferType } from '../../shared-types';
+import FavouriteCardsList from '../../components/favourite-cards-list/favourite-cards-list';
 
 type FavoritesScreenProps = {
   offers: OfferType[];
@@ -14,8 +15,7 @@ function FavouritesPage({ offers }: FavoritesScreenProps): JSX.Element {
       <div className="page__favorites-container container">
         <section className="favorites">
           <h1 className="favorites__title">Saved listing</h1>
-
-          <FavoritesList offers={offers} />
+          <FavouriteCardsList offers={offers} />
         </section>
       </div>
     </main>

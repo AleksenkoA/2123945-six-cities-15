@@ -44,7 +44,7 @@ function App({ offerCount, offers }: MainPageScreenProps): JSX.Element {
                   authorisationStatus={authorisationStatus}
                   isReverse
                 >
-                  <FavouritesPage />
+                  <FavouritesPage offers={offers}/>
                 </PrivateRoute>
               }
             />
