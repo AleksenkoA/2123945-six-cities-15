@@ -1,6 +1,6 @@
 export const Setting = {
   OfferCount: 312,
-};
+} as const;
 
 export const AppRoute = {
   Root: '/',
@@ -14,6 +14,8 @@ export const AuthorisationStatus = {
   NoAuth: 'NO_AUTH',
   Unknown: 'UNKNOWN',
 } as const;
+
+export type AuthorisationStatusType = typeof AuthorisationStatus[keyof typeof AuthorisationStatus];
 
 export type CitiesType = {
   name: string;

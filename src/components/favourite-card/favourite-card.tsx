@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import { CardItemType } from '../../shared-types';
+import { OfferType } from '../../shared-types';
 
 export type FavoriteCardProps = {
-  card: CardItemType;
+  card: OfferType;
 };
 
 function PremiumBadge(): JSX.Element {
