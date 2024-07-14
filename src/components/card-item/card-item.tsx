@@ -1,5 +1,10 @@
 import { Link } from 'react-router-dom';
-import { CardsItemProps } from '../../shared-types';
+import { CardItemType } from '../../shared-types';
+
+export type CardsItemProps = {
+  card: CardItemType;
+  className?: string;
+};
 
 function PremiumBadge(): JSX.Element {
   return (
@@ -9,10 +14,10 @@ function PremiumBadge(): JSX.Element {
   );
 }
 
-function CardItem({ card }: CardsItemProps): JSX.Element {
+function CardItem({ card, className = 'cities__card' }: CardsItemProps): JSX.Element {
   const { id, title, type, price, isPremium, previewImage } = card;
   return (
-    <article className="cities__card place-card">
+    <article className={`${className} place-card`}>
       {isPremium && <PremiumBadge />}
       <div className="cities__image-wrapper place-card__image-wrapper">
         <Link to={`offer/${id}`}>

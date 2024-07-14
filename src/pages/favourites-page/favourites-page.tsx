@@ -6,6 +6,7 @@ type FavoritesScreenProps = {
   offers: OfferType[];
 };
 
+
 function FavouritesPage({ offers }: FavoritesScreenProps): JSX.Element {
   return (
     <main className="page__main page__main--favorites">

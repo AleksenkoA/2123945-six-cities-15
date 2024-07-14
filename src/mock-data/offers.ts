@@ -1,4 +1,6 @@
-export const offers = [
+import { OfferType } from '../shared-types';
+
+export const offers: OfferType[] = [
   {
     'id': '1',
     'title': 'Beautiful & luxurious studio at great location',
@@ -68,7 +70,7 @@ export const offers = [
       'avatarUrl': 'https://url-to-image/image.png',
       'isPro': false
     },
-    'images': ['img/1.png', 'img/2.png'],
+    'images': ['img/1.png'],
     'maxAdults': 4
   }
 ];

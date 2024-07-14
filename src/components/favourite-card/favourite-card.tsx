@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom';
 import { OfferType } from '../../shared-types';
 
 export type FavoriteCardProps = {
-  card: OfferType;
+  offer: OfferType;
+  className?: string;
 };
 
 function PremiumBadge(): JSX.Element {
@@ -13,10 +14,10 @@ function PremiumBadge(): JSX.Element {
   );
 }
 
-function FavouriteCard({ card }: FavoriteCardProps): JSX.Element {
-  const { id, title, type, price, isPremium, previewImage } = card;
+function FavouriteCard({ offer, className }: FavoriteCardProps): JSX.Element {
+  const { id, title, type, price, isPremium, previewImage } = offer;
   return (
-    <article className="favorites__card place-card">
+    <article className={`${className} place-card`}>
       {isPremium && <PremiumBadge />}
       <div className="favorites__image-wrapper place-card__image-wrapper">
         <Link to={`offer/${id}`}>

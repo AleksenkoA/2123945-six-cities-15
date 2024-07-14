@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { MainPageScreenProps } from '../../shared-types';
+import { OfferType } from '../../shared-types';
 import { AppRoute, AuthorisationStatus } from '../../const';
 import PrivateRoute from '../private-route/private-route';
 import { HelmetProvider } from 'react-helmet-async';
@@ -11,6 +11,11 @@ import OfferPage from '../../pages/offer-page/offer-page';
 import Page404 from '../../pages/page-404/page-404';
 import { getAuthorisationStatus } from '../../utils';
 import ScrollToTop from '../scroll-to-top/scroll-to-top';
+
+export type MainPageScreenProps = {
+  offerCount: number;
+  offers: OfferType[];
+};
 
 function App({ offerCount, offers }: MainPageScreenProps): JSX.Element {
   const authorisationStatus = getAuthorisationStatus();
@@ -25,7 +30,7 @@ function App({ offerCount, offers }: MainPageScreenProps): JSX.Element {
           >
             <Route
               index
-              element={<MainPage offerCount={offerCount} offers={offers} />}
+              element={<MainPage offerCount={offerCount} cards={offers} />}
             />
             <Route path={AppRoute.OfferPage} element={<OfferPage />} />
             <Route

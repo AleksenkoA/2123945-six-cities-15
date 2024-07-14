@@ -35,6 +35,7 @@ export type CardItemType = {
 
 export type CardsItemProps = {
   card: CardItemType;
+  className?: string;
 };
 
 
@@ -126,7 +127,7 @@ export type FavoritesScreenProps = {
 // MainPage
 export type MainPageScreenProps = {
   offerCount: number;
-  offers: CardsItemProps[];
+  offers?: CardItemType[];
 };
 
 // MainEmpty

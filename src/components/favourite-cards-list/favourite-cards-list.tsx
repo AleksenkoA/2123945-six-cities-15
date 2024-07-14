@@ -9,7 +9,7 @@ function FavouriteCardsList({ offers }: FavouriteCardsListProps): JSX.Element {
   return (
     <div className="cities__places-list places__list tabs__content">
       {offers.map((offer) => (
-        <FavouriteCard card={offer} key={offer.id} />
+        <FavouriteCard offer={offer} key={offer.id} className='favorites__card' />
       ))}
     </div>
   );

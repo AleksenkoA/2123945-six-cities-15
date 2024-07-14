@@ -6,6 +6,7 @@ import CardsList from '../../components/cards-list/cards-list';
 import ReviewsList from '../../components/review-list/review-list';
 import { Helmet } from 'react-helmet-async';
 import ReviewsForm from '../../components/review-form/review-form';
+import { cards } from '../../mock-data/card-data';
 
 function OfferPage(): JSX.Element {
   return (
@@ -108,7 +109,7 @@ function OfferPage(): JSX.Element {
             Other places in the neighbourhood
             </h2>
             <div className="near-places__list places__list">
-              <CardsList />
+              <CardsList cards={cards} />
             </div>
           </section>
         </div>

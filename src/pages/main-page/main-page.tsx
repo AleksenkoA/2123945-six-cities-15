@@ -2,16 +2,17 @@ import OptionsList from '../../components/sorting/sorting';
 import Map from '../../components/map/map';
 import CardsList from '../../components/cards-list/cards-list';
 import SortingHeader from '../../components/sorting-header/sorting-header';
-import { CardsItemProps } from '../../shared-types';
+// import { CardsItemProps } from '../../shared-types';
 import { Helmet } from 'react-helmet-async';
 import LocationsList from '../../components/cities-list/cities-list';
+import { OfferType } from '../../shared-types';
 
 export type MainPageScreenProps = {
   offerCount: number;
-  offers: CardsItemProps[];
+  cards: OfferType[];
 };
 
-function MainPage({ offerCount, offers }: MainPageScreenProps): JSX.Element {
+function MainPage({ offerCount, cards }: MainPageScreenProps): JSX.Element {
   return (
     <>
       <Helmet>
@@ -29,7 +30,7 @@ function MainPage({ offerCount, offers }: MainPageScreenProps): JSX.Element {
             <div className="cities__places-container container">
               <section className="cities__places places">
                 <h2 className="visually-hidden">Places</h2>
-                <SortingHeader offerCount={offerCount} offers={offers} />
+                <SortingHeader offerCount={offerCount} />
                 <form className="places__sorting" action="#" method="get">
                   <span className="places__sorting-caption">Sort by</span>
                   <span className="places__sorting-type" tabIndex={0}>
@@ -41,7 +42,7 @@ function MainPage({ offerCount, offers }: MainPageScreenProps): JSX.Element {
                   <OptionsList />
                 </form>
                 <div className="cities__places-list places__list tabs__content">
-                  <CardsList />
+                  <CardsList cards={cards} />
                 </div>
               </section>
               <Map />
