@@ -1,242 +1,74 @@
 export const offers = [
   {
-    id: '1dfw4',
-    title: 'Beautiful & luxurious apartment at great location',
-    type: 'Apartment',
-    price: 120,
-    city: {
-      name: 'Amsterdam',
-      location: {
-        latitude: 52.3909553943508,
-        longitude: 4.85309666406198,
-        zoom: 13,
-      },
+    'id': '1',
+    'title': 'Beautiful & luxurious studio at great location',
+    'type': 'apartment',
+    'price': 120,
+    'city': {
+      'name': 'Amsterdam',
+      'location': {
+        'latitude': 52.35514938496378,
+        'longitude': 4.673877537499948,
+        'zoom': 8
+      }
     },
-    location: {
-      latitude: 52.3909553943508,
-      longitude: 4.85309666406198,
-      zoom: 8,
+    'location': {
+      'latitude': 52.35514938496378,
+      'longitude': 4.673877537499948,
+      'zoom': 8
     },
-    images: [
-      'img/room.jpg',
-      'img/apartment-01.jpg',
-      'img/apartment-02.jpg',
-      'img/apartment-03.jpg',
-      'img/studio-01.jpg',
+    'isFavorite': false,
+    'isPremium': false,
+    'rating': 4,
+    'previewImage': 'img/apartment-03.jpg',
+    'description': 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    'bedrooms': 3,
+    'goods': [
+      'Heating'
     ],
-    description:
-      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.',
-    bedrooms: 3,
-    goods: [
-      'Wi-Fi',
-      'Washing machine',
-      'Towels',
-      'Heating',
-      'Coffee machine',
-      'Baby seat',
-      'Kitchen',
-      'Dishwasher',
-      'Cabel TV',
-      'Fridge',
+    'host': {
+      'name': 'Oliver Conner',
+      'avatarUrl': 'https://url-to-image/image.png',
+      'isPro': false
+    },
+    'images': [
+      'https://url-to-image/image.png'
     ],
-    maxAdults: 4,
-    comments: [
-      {
-        id: 'hskagfs',
-        date: '2019-04-24',
-        user: {
-          name: 'Max',
-          avatarUrl: 'img/avatar-max.jpg',
-          isPro: false,
-        },
-        comment:
-          'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.',
-        rating: 4,
-      },
-    ],
-    rating: 4,
-    isPremium: true,
-    isFavorite: false,
-    previewImage: 'img/apartment-01.jpg',
+    'maxAdults': 4
   },
   {
-    id: '2dfw4',
-    title: 'Wood and stone place',
-    type: 'Room',
-    price: 80,
-    city: {
-      name: 'Amsterdam',
-      location: {
-        latitude: 52.3609553943508,
-        longitude: 4.85309666406198,
-        zoom: 3,
-      },
+    'id': '2',
+    'title': 'Beautiful & luxurious studio at great location',
+    'type': 'apartment',
+    'price': 120,
+    'city': {
+      'name': 'Amsterdam',
+      'location': {
+        'latitude': 52.35514938496378,
+        'longitude': 4.673877537499948,
+        'zoom': 8
+      }
     },
-    location: {
-      latitude: 52.3609553943508,
-      longitude: 4.85309666406198,
-      zoom: 8,
+    'location': {
+      'latitude': 52.35514938496378,
+      'longitude': 4.673877537499948,
+      'zoom': 8
     },
-    images: [
-      'img/room.jpg',
-      'img/apartment-01.jpg',
-      'img/apartment-02.jpg',
-      'img/apartment-03.jpg',
-      'img/studio-01.jpg',
+    'isFavorite': false,
+    'isPremium': false,
+    'rating': 4,
+    'previewImage': 'img/apartment-03.jpg',
+    'description': 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
+    'bedrooms': 3,
+    'goods': [
+      'Heating'
     ],
-    description:
-      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.',
-    bedrooms: 3,
-    goods: [
-      'Wi-Fi',
-      'Washing machine',
-      'Towels',
-      'Heating',
-      'Coffee machine',
-      'Baby seat',
-      'Kitchen',
-      'Dishwasher',
-      'Cabel TV',
-      'Fridge',
-    ],
-    maxAdults: 4,
-    comments: [
-      {
-        id: 'hskagfs',
-        date: '2019-04-24',
-        user: {
-          name: 'Max',
-          avatarUrl: 'img/avatar-max.jpg',
-          isPro: false,
-        },
-        comment:
-          'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.',
-        rating: 4,
-      },
-    ],
-    rating: 3,
-    isPremium: false,
-    isFavorite: true,
-    previewImage: 'img/room.jpg',
-  },
-  {
-    id: '3dfw4',
-    title: 'Canal View Prinsengracht',
-    type: 'Apartment',
-    price: 132,
-    city: {
-      name: 'Amsterdam',
-      location: {
-        latitude: 52.3909553943508,
-        longitude: 4.929309666406198,
-        zoom: 3,
-      },
+    'host': {
+      'name': 'Oliver Conner',
+      'avatarUrl': 'https://url-to-image/image.png',
+      'isPro': false
     },
-    location: {
-      latitude: 52.3909553943508,
-      longitude: 4.929309666406198,
-      zoom: 8,
-    },
-    images: [
-      'img/room.jpg',
-      'img/apartment-01.jpg',
-      'img/apartment-02.jpg',
-      'img/apartment-03.jpg',
-      'img/studio-01.jpg',
-    ],
-    description:
-      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.',
-    bedrooms: 3,
-    goods: [
-      'Wi-Fi',
-      'Washing machine',
-      'Towels',
-      'Heating',
-      'Coffee machine',
-      'Baby seat',
-      'Kitchen',
-      'Dishwasher',
-      'Cabel TV',
-      'Fridge',
-    ],
-    maxAdults: 4,
-    comments: [
-      {
-        id: 'hskagfs',
-        date: '2019-04-24',
-        user: {
-          name: 'Max',
-          avatarUrl: 'img/avatar-max.jpg',
-          isPro: false,
-        },
-        comment:
-          'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.',
-        rating: 4,
-      },
-    ],
-    rating: 5,
-    isPremium: false,
-    isFavorite: false,
-    previewImage: 'img/apartment-02.jpg',
-  },
-  {
-    id: '4dfw4',
-    title: 'Nice, cozy, warm big bed apartment',
-    type: 'Apartment',
-    price: 180,
-    city: {
-      name: 'Amsterdam',
-      location: {
-        latitude: 52.3809553943508,
-        longitude: 4.939309666406198,
-        zoom: 3,
-      },
-    },
-    location: {
-      latitude: 52.3809553943508,
-      longitude: 4.939309666406198,
-      zoom: 8,
-    },
-    images: [
-      'img/room.jpg',
-      'img/apartment-01.jpg',
-      'img/apartment-02.jpg',
-      'img/apartment-03.jpg',
-      'img/studio-01.jpg',
-    ],
-    description:
-      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.',
-    bedrooms: 3,
-    goods: [
-      'Wi-Fi',
-      'Washing machine',
-      'Towels',
-      'Heating',
-      'Coffee machine',
-      'Baby seat',
-      'Kitchen',
-      'Dishwasher',
-      'Cabel TV',
-      'Fridge',
-    ],
-    maxAdults: 4,
-    comments: [
-      {
-        id: 'hskagfs',
-        date: '2019-04-24',
-        user: {
-          name: 'Max',
-          avatarUrl: 'img/avatar-max.jpg',
-          isPro: false,
-        },
-        comment:
-          'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.',
-        rating: 4,
-      },
-    ],
-    rating: 4,
-    isPremium: true,
-    isFavorite: false,
-    previewImage: 'img/apartment-03.jpg',
-  },
+    'images': ['img/1.png', 'img/2.png'],
+    'maxAdults': 4
+  }
 ];

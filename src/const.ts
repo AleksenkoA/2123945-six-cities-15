@@ -47,6 +47,11 @@ export const CITIES: CitiesType[] = [
   },
 ];
 
+export type RatingType = {
+  value: string;
+  title: string;
+};
+
 export const RATINGS: RatingType[] = [
   {
     value: '5',
@@ -75,7 +80,7 @@ export type SortType = {
   isActive: boolean;
 };
 
-export const OPTIONS: SortType[] = [
+export const SORTING_OPTIONS: SortType[] = [
   {
     name: 'Popular',
     isActive: true,
@@ -93,11 +98,6 @@ export const OPTIONS: SortType[] = [
     isActive: false,
   },
 ];
-
-export type RatingType = {
-  value: string;
-  title: string;
-};
 
 export const INSIDE_OFFERS = [
   'Wi-Fi',

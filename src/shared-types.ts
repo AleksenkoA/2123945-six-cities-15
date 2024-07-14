@@ -1,8 +1,12 @@
-import { CITIES, OPTIONS } from './const';
+import { CITIES, SORTING_OPTIONS } from './const';
 
-export type MainPageScreenProps = {
-  offerCount: number;
-  offers: OfferType[];
+// СПИСОК ПРЕДЛОЖЕНИЙ
+
+export type RentType = 'apartment' | 'room' | 'house' | 'hotel';
+
+export type CardCitiesType = {
+  name: string;
+  location: LocationType;
 };
 
 export type CitiesType = {
@@ -10,34 +14,20 @@ export type CitiesType = {
   isActive: boolean;
 };
 
-export type OfferType = {
-  id: number | string;
-  title: string;
-  type: string;
-  price: number;
-  city: CitiesType;
-  location: LocationType;
-  images: string[];
-  description: string;
-  bedrooms: number;
-  goods: string[];
-  maxAdults: number;
-  comments: ReviewItemType[];
-  rating: number;
-  previewImage: string;
-  isPremium: boolean;
-  isFavorite: boolean;
+export type LocationType = {
+  latitude: number;
+  longitude: number;
+  zoom: number;
 };
-
-export type RentType = 'apartment' | 'room' | 'house' | 'hotel';
 
 export type CardItemType = {
   id: number | string;
-  title?: string;
+  title: string;
   type: RentType;
   price: number;
   previewImage: string;
-  city: string;
+  city: CardCitiesType;
+  location: LocationType;
   isFavorite?: boolean;
   isPremium?: boolean;
   rating?: number;
@@ -47,12 +37,34 @@ export type CardsItemProps = {
   card: CardItemType;
 };
 
-export type CityItemProps = {
-  city: (typeof CITIES)[number];
+
+// РАСШИРЕННАЯ ИНФОРМАЦИЯ О ПРЕДЛОЖЕНИИ
+
+export type OfferType = {
+id: string;
+title: string;
+type: string;
+price: number;
+city: CardCitiesType;
+location: LocationType;
+isFavorite: boolean;
+isPremium: boolean;
+rating: number;
+previewImage: string;
+description: string;
+bedrooms: number;
+goods: [string];
+host: {
+name: string;
+avatarUrl: string;
+isPro: boolean;
 };
+images: [string];
+maxAdults: number;
+}
 
 export type OptionItemProps = {
-  name: (typeof OPTIONS)[number];
+  name: (typeof SORTING_OPTIONS)[number];
   isActive: boolean;
 };
 
@@ -104,8 +116,20 @@ export type RatingType = {
   title: string;
 };
 
-export type LocationType = {
-  latitude: number;
-  longitude: number;
-  zoom: number;
+// ПРОПСЫ В ПЕЙДЖАХ
+
+// FavouritesPage
+export type FavoritesScreenProps = {
+  offers: OfferType[];
+};
+
+// MainPage
+export type MainPageScreenProps = {
+  offerCount: number;
+  offers: CardsItemProps[];
+};
+
+// MainEmpty
+export type CityItemProps = {
+  city: (typeof CITIES)[number];
 };

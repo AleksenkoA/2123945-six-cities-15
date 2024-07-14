@@ -1,6 +1,10 @@
 import { Helmet } from 'react-helmet-async';
-import { CityItemProps } from '../../shared-types';
 import LocationsList from '../../components/cities-list/cities-list';
+import { CITIES } from '../../const';
+
+export type CityItemProps = {
+  city: (typeof CITIES)[number];
+};
 
 function MainEmpty({ city }: CityItemProps): JSX.Element {
   return (
