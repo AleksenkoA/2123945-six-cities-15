@@ -9,7 +9,7 @@ function FavouritesPageEmpty(): JSX.Element {
         <title>6 cities: favorites empty</title>
       </Helmet>
       <div className="page page--favorites-empty">
-        <Header />
+        <Header/>
 
         <main className="page__main page__main--favorites page__main--favorites-empty">
           <div className="page__favorites-container container">
@@ -25,7 +25,7 @@ function FavouritesPageEmpty(): JSX.Element {
           </div>
         </main>
 
-        <Footer />
+        <Footer/>
       </div>
     </>
   );
