@@ -1,4 +1,20 @@
-import { ReviewItemType, ReviewsItemProps } from '../../shared-types';
+export type UserType = {
+  name: string;
+  avatarUrl: string;
+  isPro?: boolean;
+};
+
+export type ReviewItemType = {
+  id: string | number;
+  date: string;
+  user: UserType;
+  comment: string;
+  rating: number;
+};
+
+export type ReviewsItemProps = {
+  review: ReviewItemType;
+};
 
 function ReviewItem({ review }: ReviewsItemProps): JSX.Element {
   const { user, comment, date, rating } = review;
