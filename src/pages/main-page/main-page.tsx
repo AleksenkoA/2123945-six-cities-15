@@ -5,11 +5,11 @@ import SortingHeader from '../../components/sorting-header/sorting-header';
 // import { CardsItemProps } from '../../shared-types';
 import { Helmet } from 'react-helmet-async';
 import LocationsList from '../../components/cities-list/cities-list';
-import { OfferType } from '../../shared-types';
+import { CardItemType } from '../../shared-types';
 
 export type MainPageScreenProps = {
   offerCount: number;
-  cards: OfferType[];
+  cards: CardItemType[];
 };
 
 function MainPage({ offerCount, cards }: MainPageScreenProps): JSX.Element {

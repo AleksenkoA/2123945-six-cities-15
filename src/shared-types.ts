@@ -38,31 +38,30 @@ export type CardsItemProps = {
   className?: string;
 };
 
-
 // РАСШИРЕННАЯ ИНФОРМАЦИЯ О ПРЕДЛОЖЕНИИ
 
 export type OfferType = {
-id: string;
-title: string;
-type: string;
-price: number;
-city: CardCitiesType;
-location: LocationType;
-isFavorite: boolean;
-isPremium: boolean;
-rating: number;
-previewImage: string;
-description: string;
-bedrooms: number;
-goods: [string];
-host: {
-  name: string;
-  avatarUrl: string;
-  isPro: boolean;
+  id: string;
+  title: string;
+  type: string;
+  price: number;
+  city: CardCitiesType;
+  location: LocationType;
+  isFavorite: boolean;
+  isPremium: boolean;
+  rating: number;
+  previewImage: string;
+  description: string;
+  bedrooms: number;
+  goods: [string];
+  host: {
+    name: string;
+    avatarUrl: string;
+    isPro: boolean;
   };
-images: [string];
-maxAdults: number;
-}
+  images: [string];
+  maxAdults: number;
+};
 
 export type OptionItemProps = {
   name: (typeof SORTING_OPTIONS)[number];
@@ -78,9 +77,9 @@ export type FavouritesListProps = {
   cards: string[];
 };
 
-export type FavoriteCardProps = {
-  card: CardItemType;
-};
+// export type FavoriteCardProps = {
+//   card: CardItemType;
+// };
 
 export type UserType = {
   name: string;
