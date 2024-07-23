@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import { CardItemType } from '../../shared-types';
+import { OfferPreview } from '../../shared-types';
 
 export type CardsItemProps = {
-  card: CardItemType;
+  card: OfferPreview;
   className?: string;
 };
 
@@ -14,7 +14,10 @@ function PremiumBadge(): JSX.Element {
   );
 }
 
-function CardItem({ card, className = 'cities__card' }: CardsItemProps): JSX.Element {
+function CardItem({
+  card,
+  className = 'cities__card',
+}: CardsItemProps): JSX.Element {
   const { id, title, type, price, isPremium, previewImage } = card;
   return (
     <article className={`${className} place-card`}>

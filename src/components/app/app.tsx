@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { OfferType } from '../../shared-types';
+import { OfferPreview } from '../../shared-types';
 import { AppRoute, AuthorisationStatus } from '../../const';
 import PrivateRoute from '../private-route/private-route';
 import { HelmetProvider } from 'react-helmet-async';
@@ -14,7 +14,7 @@ import ScrollToTop from '../scroll-to-top/scroll-to-top';
 
 export type MainPageScreenProps = {
   offerCount: number;
-  offers: OfferType[];
+  offers: OfferPreview[];
 };
 
 function App({ offerCount, offers }: MainPageScreenProps): JSX.Element {
@@ -49,7 +49,7 @@ function App({ offerCount, offers }: MainPageScreenProps): JSX.Element {
                   authorisationStatus={authorisationStatus}
                   isReverse
                 >
-                  <FavouritesPage offers={offers}/>
+                  <LoginPage />
                 </PrivateRoute>
               }
             />

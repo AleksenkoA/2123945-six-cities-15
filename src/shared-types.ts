@@ -20,7 +20,7 @@ export type LocationType = {
   zoom: number;
 };
 
-export type CardItemType = {
+export type OfferPreview = {
   id: number | string;
   title: string;
   type: RentType;
@@ -34,13 +34,13 @@ export type CardItemType = {
 };
 
 export type CardsItemProps = {
-  card: CardItemType;
+  card: OfferPreview;
   className?: string;
 };
 
 // РАСШИРЕННАЯ ИНФОРМАЦИЯ О ПРЕДЛОЖЕНИИ
 
-export type OfferType = {
+export type OfferFull = {
   id: string;
   title: string;
   type: string;
@@ -69,7 +69,7 @@ export type OptionItemProps = {
 };
 
 export type FavouritesPageProps = Pick<
-  CardItemType,
+  OfferPreview,
   'title' | 'type' | 'price' | 'isPremium' | 'previewImage'
 >;
 
@@ -78,7 +78,7 @@ export type FavouritesListProps = {
 };
 
 // export type FavoriteCardProps = {
-//   card: CardItemType;
+//   card: OfferPreview;
 // };
 
 export type UserType = {
@@ -120,13 +120,13 @@ export type RatingType = {
 
 // FavouritesPage
 export type FavoritesScreenProps = {
-  offers: OfferType[];
+  offers: OfferFull[];
 };
 
 // MainPage
 export type MainPageScreenProps = {
   offerCount: number;
-  offers?: CardItemType[];
+  offers?: OfferPreview[];
 };
 
 // MainEmpty

@@ -1,9 +1,9 @@
 import { Helmet } from 'react-helmet-async';
-import { OfferType } from '../../shared-types';
+import { OfferPreview } from '../../shared-types';
 import FavouriteCardsList from '../../components/favourite-cards-list/favourite-cards-list';
 
 type FavoritesScreenProps = {
-  offers: OfferType[];
+  offers: OfferPreview[];
 };
 
 function FavouritesPage({ offers }: FavoritesScreenProps): JSX.Element {

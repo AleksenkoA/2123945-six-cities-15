@@ -1,9 +1,9 @@
 // import { cards as mockCards } from '../../mock-data/card-data';
-import { CardItemType } from '../../shared-types';
+import { OfferPreview } from '../../shared-types';
 import CardItem from '../card-item/card-item';
 
 type FavouriteCardsListProps = {
-  cards: CardItemType[];
+  cards: OfferPreview[];
 };
 
 function CardsList({ cards }: FavouriteCardsListProps): JSX.Element {
