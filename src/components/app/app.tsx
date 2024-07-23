@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { OfferPreview } from '../../shared-types';
-import { AppRoute, AuthorisationStatus } from '../../const';
+import { AppRoute } from '../../const';
 import PrivateRoute from '../private-route/private-route';
 import { HelmetProvider } from 'react-helmet-async';
 import Layout from '../layout/layout';
@@ -26,7 +26,7 @@ function App({ offerCount, offers }: MainPageScreenProps): JSX.Element {
         <Routes>
           <Route
             path={AppRoute.Root}
-            element={<Layout authorisationStatus={AuthorisationStatus} />}
+            element={<Layout authorisationStatus={authorisationStatus} />}
           >
             <Route
               index
@@ -38,18 +38,6 @@ function App({ offerCount, offers }: MainPageScreenProps): JSX.Element {
               element={
                 <PrivateRoute authorisationStatus={authorisationStatus}>
                   <FavouritesPage offers={offers} />
-                </PrivateRoute>
-              }
-            />
-
-            <Route
-              path={AppRoute.LoginPage}
-              element={
-                <PrivateRoute
-                  authorisationStatus={authorisationStatus}
-                  isReverse
-                >
-                  <LoginPage />
                 </PrivateRoute>
               }
             />

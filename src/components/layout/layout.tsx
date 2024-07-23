@@ -1,6 +1,5 @@
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import { AppRoute } from '../../const';
-import { AuthorisationStatus } from '../../const';
+import { AppRoute, AuthorisationStatus } from '../../const';
 
 function getLayoutState(pathname: string) {
   let mainClassName = '';
@@ -25,7 +24,7 @@ function getLayoutState(pathname: string) {
 }
 
 type LayoutProps = {
-  authorisationStatus: typeof AuthorisationStatus;
+  authorisationStatus: string;
 };
 
 function Layout({ authorisationStatus }: LayoutProps): JSX.Element {
