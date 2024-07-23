@@ -64,7 +64,7 @@ export type OfferFull = {
 };
 
 export type OptionItemProps = {
-  name: (typeof SORTING_OPTIONS)[number];
+  optionName: (typeof SORTING_OPTIONS)[number];
   isActive: boolean;
 };
 
