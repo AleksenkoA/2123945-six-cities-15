@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import Logo from '../logo/logo';
 import { AppRoute } from '../../const';
 import LocationsList from '../cities-list/cities-list';
+import Logo from '../logo/logo';
 
 function HeaderMain(): JSX.Element {
   return (
