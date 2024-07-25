@@ -1,4 +1,3 @@
-// import { cards as mockCards } from '../../mock-data/card-data';
 import { OfferPreview } from '../../shared-types';
 import CardItem from '../card-item/card-item';
 

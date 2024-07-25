@@ -2,7 +2,6 @@ import OptionsList from '../../components/sorting/sorting';
 import Map from '../../components/map/map';
 import CardsList from '../../components/cards-list/cards-list';
 import SortingHeader from '../../components/sorting-header/sorting-header';
-// import { CardsItemProps } from '../../shared-types';
 import { Helmet } from 'react-helmet-async';
 import LocationsList from '../../components/cities-list/cities-list';
 import { OfferPreview } from '../../shared-types';

@@ -1,7 +1,5 @@
 import { CITIES, SORTING_OPTIONS } from './const';
 
-// СПИСОК ПРЕДЛОЖЕНИЙ
-
 export type RentType = 'apartment' | 'room' | 'house' | 'hotel';
 
 export type CardCitiesType = {
@@ -20,36 +18,35 @@ export type LocationType = {
   zoom: number;
 };
 
-export type OfferPreview = {
-  id: number | string;
-  title: string;
-  type: RentType;
-  price: number;
-  previewImage: string;
-  city: CardCitiesType;
-  location: LocationType;
-  isFavorite?: boolean;
-  isPremium?: boolean;
-  rating?: number;
-};
-
 export type CardsItemProps = {
   card: OfferPreview;
   className?: string;
 };
 
-// РАСШИРЕННАЯ ИНФОРМАЦИЯ О ПРЕДЛОЖЕНИИ
+export type OfferPreview = Pick<
+  OfferFull,
+  | 'id'
+  | 'title'
+  | 'type'
+  | 'price'
+  | 'previewImage'
+  | 'city'
+  | 'location'
+  | 'isFavorite'
+  | 'isPremium'
+  | 'rating'
+>;
 
 export type OfferFull = {
-  id: string;
+  id: string | number;
   title: string;
   type: string;
   price: number;
   city: CardCitiesType;
   location: LocationType;
-  isFavorite: boolean;
-  isPremium: boolean;
-  rating: number;
+  isFavorite?: boolean;
+  isPremium?: boolean;
+  rating?: number;
   previewImage: string;
   description: string;
   bedrooms: number;

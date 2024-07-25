@@ -7,6 +7,12 @@ import ReviewsList from '../../components/review-list/review-list';
 import { Helmet } from 'react-helmet-async';
 import ReviewsForm from '../../components/review-form/review-form';
 import { cards } from '../../mock-data/card-data';
+import { OfferFull } from '../../shared-types';
+
+export type MainPageScreenProps = {
+  offerCount: number;
+  offers: OfferFull[];
+};
 
 function OfferPage(): JSX.Element {
   return (
@@ -25,7 +31,7 @@ function OfferPage(): JSX.Element {
               </div>
               <div className="offer__name-wrapper">
                 <h1 className="offer__name">
-                Beautiful &amp; luxurious studio at great location
+                  Beautiful &amp; luxurious studio at great location
                 </h1>
                 <button className="offer__bookmark-button button" type="button">
                   <svg className="offer__bookmark-icon" width="31" height="33">
@@ -47,13 +53,13 @@ function OfferPage(): JSX.Element {
               </div>
               <ul className="offer__features">
                 <li className="offer__feature offer__feature--entire">
-                Apartment
+                  Apartment
                 </li>
                 <li className="offer__feature offer__feature--bedrooms">
-                3 Bedrooms
+                  3 Bedrooms
                 </li>
                 <li className="offer__feature offer__feature--adults">
-                Max 4 adults
+                  Max 4 adults
                 </li>
               </ul>
               <div className="offer__price">
@@ -81,20 +87,20 @@ function OfferPage(): JSX.Element {
                 </div>
                 <div className="offer__description">
                   <p className="offer__text">
-                  A quiet cozy and picturesque that hides behind a a river by
-                  the unique lightness of Amsterdam. The building is green and
-                  from 18th century.
+                    A quiet cozy and picturesque that hides behind a a river by
+                    the unique lightness of Amsterdam. The building is green and
+                    from 18th century.
                   </p>
                   <p className="offer__text">
-                  An independent House, strategically located between Rembrand
-                  Square and National Opera, but where the bustle of the city
-                  comes to rest in this alley flowery and colorful.
+                    An independent House, strategically located between Rembrand
+                    Square and National Opera, but where the bustle of the city
+                    comes to rest in this alley flowery and colorful.
                   </p>
                 </div>
               </div>
               <section className="offer__reviews reviews">
                 <h2 className="reviews__title">
-                Reviews &middot; <span className="reviews__amount">1</span>
+                  Reviews &middot; <span className="reviews__amount">1</span>
                 </h2>
                 <ReviewsList reviews={REVIEWS} />
                 <ReviewsForm />
@@ -106,7 +112,7 @@ function OfferPage(): JSX.Element {
         <div className="container">
           <section className="near-places places">
             <h2 className="near-places__title">
-            Other places in the neighbourhood
+              Other places in the neighbourhood
             </h2>
             <div className="near-places__list places__list">
               <CardsList cards={cards} />
