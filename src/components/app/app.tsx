@@ -34,6 +34,7 @@ function App({ offerCount, offers }: MainPageScreenProps): JSX.Element {
             />
 
             <Route path={AppRoute.OfferPage} element={<OfferPage />} />
+
             <Route
               path={AppRoute.FavouritesPage}
               element={

@@ -1,10 +1,5 @@
 import { Link } from 'react-router-dom';
-import { OfferPreview } from '../../shared-types';
-
-export type CardsItemProps = {
-  card: OfferPreview;
-  className?: string;
-};
+import { CardsItemProps } from '../../shared-types';
 
 function PremiumBadge(): JSX.Element {
   return (
