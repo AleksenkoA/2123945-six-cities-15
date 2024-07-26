@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { CITIES, CitiesType } from '../../const';
 
 type LocationListItemProps = {
@@ -12,14 +13,14 @@ function LocationListItem({
   const { isActive, name } = city;
   return (
     <li className="locations__item">
-      <a
+      <Link
         className={`locations__item-link tabs__item ${
           isActive ? activeItemClass : ''
         }`}
-        href="#"
+        to="#"
       >
         <span>{name}</span>
-      </a>
+      </Link>
     </li>
   );
 }
