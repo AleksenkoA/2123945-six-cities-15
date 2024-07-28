@@ -6,7 +6,7 @@ type LocationListItemProps = {
   activeItemClass?: string;
 };
 
-function LocationListItem({
+export function LocationListItem({
   city,
   activeItemClass = 'tabs__item--active',
 }: LocationListItemProps): JSX.Element {

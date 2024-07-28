@@ -1,5 +1,5 @@
 import { AuthorisationStatus } from './const.ts';
 
-const getAuthorisationStatus = () => AuthorisationStatus.NoAuth;
+const getAuthorisationStatus = () => AuthorisationStatus.Auth;
 
 export { getAuthorisationStatus };

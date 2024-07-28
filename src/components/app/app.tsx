@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { OfferPreview } from '../../shared-types';
+import { OfferFull } from '../../shared-types';
 import { AppRoute } from '../../const';
 import PrivateRoute from '../private-route/private-route';
 import { HelmetProvider } from 'react-helmet-async';
@@ -14,7 +14,7 @@ import ScrollToTop from '../scroll-to-top/scroll-to-top';
 
 export type MainPageScreenProps = {
   offerCount: number;
-  offers: OfferPreview[];
+  offers: OfferFull[];
 };
 
 function App({ offerCount, offers }: MainPageScreenProps): JSX.Element {
@@ -26,7 +26,14 @@ function App({ offerCount, offers }: MainPageScreenProps): JSX.Element {
         <Routes>
           <Route
             path={AppRoute.Root}
-            element={<Layout authorisationStatus={authorisationStatus} />}
+            element={
+              <Layout
+                authorisationStatus={authorisationStatus}
+                favoriteOffers={
+                  offers.filter((offer) => offer.isFavorite === true).length
+                }
+              />
+            }
           >
             <Route
               index
@@ -39,7 +46,7 @@ function App({ offerCount, offers }: MainPageScreenProps): JSX.Element {
               path={AppRoute.FavouritesPage}
               element={
                 <PrivateRoute authorisationStatus={authorisationStatus}>
-                  <FavouritesPage offers={offers} />
+                  <FavouritesPage offers={offers} city={''} />
                 </PrivateRoute>
               }
             />

@@ -12,12 +12,15 @@ function PrivateRoute({
   children,
   isReverse = false,
 }: PrivateRouteProps): JSX.Element {
-  return authorisationStatus ===
-    (isReverse ? AuthorisationStatus.NoAuth : AuthorisationStatus.Auth) ? (
-      children
-    ) : (
-      <Navigate to={isReverse ? AppRoute.Root : AppRoute.LoginPage} />
-    );
+  if (isReverse && authorisationStatus === AuthorisationStatus.NoAuth) {
+    return children;
+  }
+
+  if (!isReverse && authorisationStatus === AuthorisationStatus.Auth) {
+    return children;
+  }
+
+  return <Navigate to={isReverse ? AppRoute.Root : AppRoute.LoginPage} />;
 }
 
 export default PrivateRoute;

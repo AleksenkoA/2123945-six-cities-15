@@ -1,8 +1,8 @@
-import { OfferPreview } from '../../shared-types';
+import { OfferFull } from '../../shared-types';
 import FavouriteCard from '../favourite-card/favourite-card';
 
 type FavouriteCardsListProps = {
-  offers: OfferPreview[];
+  offers: OfferFull[];
 };
 
 function FavouriteCardsList({ offers }: FavouriteCardsListProps): JSX.Element {
