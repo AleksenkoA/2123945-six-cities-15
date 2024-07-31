@@ -29,7 +29,7 @@ export const offers: OfferFull[] = [
     goods: ['Heating'],
     host: {
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: ['https://url-to-image/image.png'],
@@ -54,7 +54,7 @@ export const offers: OfferFull[] = [
       zoom: 8,
     },
     isFavorite: true,
-    isPremium: false,
+    isPremium: true,
     rating: 4,
     previewImage: 'img/apartment-03.jpg',
     description:
@@ -63,7 +63,7 @@ export const offers: OfferFull[] = [
     goods: ['Heating'],
     host: {
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-max.jpg',
       isPro: false,
     },
     images: ['https://url-to-image/image.png'],
@@ -97,7 +97,7 @@ export const offers: OfferFull[] = [
     goods: ['Heating'],
     host: {
       name: 'Oliver Conner',
-      avatarUrl: 'https://url-to-image/image.png',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     images: ['https://url-to-image/image.png'],

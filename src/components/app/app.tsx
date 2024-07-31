@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { OfferFull } from '../../shared-types';
+import { OfferPreview, OfferFull } from '../../shared-types'; // Убедитесь, что OfferFull импортирован
 import { AppRoute } from '../../const';
 import PrivateRoute from '../private-route/private-route';
 import { HelmetProvider } from 'react-helmet-async';
@@ -14,13 +14,15 @@ import ScrollToTop from '../scroll-to-top/scroll-to-top';
 
 export type MainPageScreenProps = {
   offerCount: number;
-  offers: OfferFull[];
+  offers: OfferPreview[];
+  fullOffers: OfferFull[];
 };
 
-function App({ offerCount, offers }: MainPageScreenProps): JSX.Element {
+function App({ offerCount, offers, fullOffers }: MainPageScreenProps): JSX.Element {
   const authorisationStatus = getAuthorisationStatus();
 
-  const selectedOffer = offers[0];
+  // Как выбираем полное предложение для передачи в OfferPage?
+  const selectedFullOffer = fullOffers[1];
 
   return (
     <HelmetProvider>
@@ -37,7 +39,7 @@ function App({ offerCount, offers }: MainPageScreenProps): JSX.Element {
               index
               element={<MainPage offerCount={offerCount} cards={offers} />}
             />
-            <Route path={AppRoute.OfferPage} element={<OfferPage offer={selectedOffer} />} />
+            <Route path={AppRoute.OfferPage} element={<OfferPage offer={selectedFullOffer} />} />
             <Route
               path={AppRoute.FavouritesPage}
               element={
