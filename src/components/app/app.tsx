@@ -40,7 +40,7 @@ function App({ offerCount, offers }: MainPageScreenProps): JSX.Element {
               path={AppRoute.FavouritesPage}
               element={
                 <PrivateRoute authorisationStatus={authorisationStatus}>
-                  <FavouritesPage offers={offers} city={'Vienna'} />
+                  <FavouritesPage offers={offers} />
                 </PrivateRoute>
               }
             />
