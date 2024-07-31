@@ -8,7 +8,7 @@ export const cards: OfferPreview[] = [
     price: 230,
     previewImage: '/img/1.jpeg',
     city: {
-      name: 'Paris',
+      name: 'Vienna',
       location: {
         latitude: 48.85661,
         longitude: 2.351499,
@@ -20,7 +20,7 @@ export const cards: OfferPreview[] = [
       longitude: 2.342499,
       zoom: 16,
     },
-    isFavorite: false,
+    isFavorite: true,
     isPremium: true,
     rating: 1.3,
   },
@@ -31,7 +31,7 @@ export const cards: OfferPreview[] = [
     price: 447,
     previewImage: '/img/2.jpeg',
     city: {
-      name: 'Paris',
+      name: 'Vienna',
       location: {
         latitude: 48.85661,
         longitude: 2.351499,
@@ -43,7 +43,7 @@ export const cards: OfferPreview[] = [
       longitude: 2.330499,
       zoom: 16,
     },
-    isFavorite: false,
+    isFavorite: true,
     isPremium: true,
     rating: 3.8,
   },
@@ -54,7 +54,7 @@ export const cards: OfferPreview[] = [
     price: 195,
     previewImage: '/img/3.jpeg',
     city: {
-      name: 'Paris',
+      name: 'Vienna',
       location: {
         latitude: 48.85661,
         longitude: 2.351499,
@@ -66,7 +66,7 @@ export const cards: OfferPreview[] = [
       longitude: 2.335499,
       zoom: 16,
     },
-    isFavorite: false,
+    isFavorite: true,
     isPremium: true,
     rating: 3.4,
   },
@@ -77,7 +77,7 @@ export const cards: OfferPreview[] = [
     price: 491,
     previewImage: '/img/4.jpeg',
     city: {
-      name: 'Paris',
+      name: 'Vienna',
       location: {
         latitude: 48.85661,
         longitude: 2.351499,
@@ -89,8 +89,8 @@ export const cards: OfferPreview[] = [
       longitude: 2.358499,
       zoom: 16,
     },
-    isFavorite: false,
-    isPremium: false,
+    isFavorite: true,
+    isPremium: true,
     rating: 4.9,
   },
   {
@@ -100,7 +100,7 @@ export const cards: OfferPreview[] = [
     price: 447,
     previewImage: '/img/5.jpeg',
     city: {
-      name: 'Paris',
+      name: 'Vienna',
       location: {
         latitude: 48.85661,
         longitude: 2.351499,
@@ -112,7 +112,7 @@ export const cards: OfferPreview[] = [
       longitude: 2.375499,
       zoom: 16,
     },
-    isFavorite: false,
+    isFavorite: true,
     isPremium: true,
     rating: 4.5,
   },

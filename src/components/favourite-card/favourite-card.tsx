@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import { OfferFull } from '../../shared-types';
+import { OfferPreview } from '../../shared-types';
 
 export type FavoriteCardProps = {
-  offer: OfferFull;
+  offer: OfferPreview;
   className?: string;
 };
 

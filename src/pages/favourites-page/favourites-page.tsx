@@ -1,34 +1,32 @@
 import { Helmet } from 'react-helmet-async';
-import { OfferFull } from '../../shared-types';
+import { OfferPreview } from '../../shared-types';
 import FavouriteCardsList from '../../components/favourite-cards-list/favourite-cards-list';
 
 type FavoritesScreenProps = {
-  offers: OfferFull[];
+  offers: OfferPreview[];
   city: string;
 };
 
-const groupedByCityOffers = (offers: OfferFull[]) => {
+const groupedByCityOffers = (offers: OfferPreview[]) => {
   const groupedOffers = offers.reduce(
-    (obj: { [key: string]: OfferFull[] }, offer) => {
-      const key = offer.city.name;
-
-      if (!obj.hasOwnProperty.call(obj, key)) {
-        obj[key] = [];
+    (acc: { [key: string]: OfferPreview[] }, offer) => {
+      const cityName = offer.city.name;
+      if (!acc[cityName]) {
+        acc[cityName] = [];
       }
-
-      obj[key].push(offer);
-      return obj;
+      acc[cityName].push(offer);
+      return acc;
     },
     {}
   );
-
   return groupedOffers;
 };
 
 function FavouritesPage({ offers, city }: FavoritesScreenProps): JSX.Element {
-  const favoriteOffers = groupedByCityOffers(
-    offers.filter((offer) => offer.isFavorite)
-  );
+  const favoriteOffers = offers.filter((offer) => offer.isFavorite === true);
+
+  const groupedFavoriteOffers = groupedByCityOffers(favoriteOffers);
+
   return (
     <main className="page__main page__main--favorites">
       <Helmet>
@@ -43,9 +41,16 @@ function FavouritesPage({ offers, city }: FavoritesScreenProps): JSX.Element {
         <section className="favorites">
           <h1 className="favorites__title">Saved listing</h1>
           <ul className="favorites__list">
-            {Object.entries(favoriteOffers).map(
-              ([key, value]: [string, OfferFull[]]) => (
-                <FavouriteCardsList key={key} offers={value} />
+            {Object.entries(groupedFavoriteOffers).map(
+              ([cityName, cityOffers]) => (
+                <li key={cityName} className="favorites__locations-items">
+                  <div className="favorites__locations locations locations--current">
+                    <div className="locations__item">
+                      <span>{city}</span>
+                    </div>
+                  </div>
+                  <FavouriteCardsList offers={cityOffers} />
+                </li>
               )
             )}
           </ul>
