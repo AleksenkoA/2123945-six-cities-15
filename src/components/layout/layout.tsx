@@ -25,7 +25,6 @@ function getLayoutState(pathname: string) {
 
 type LayoutProps = {
   authorisationStatus: string;
-  favoriteOffers: number;
 };
 
 function Layout({ authorisationStatus }: LayoutProps): JSX.Element {

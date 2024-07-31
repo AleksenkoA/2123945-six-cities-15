@@ -27,14 +27,7 @@ function App({ offerCount, offers }: MainPageScreenProps): JSX.Element {
         <Routes>
           <Route
             path={AppRoute.Root}
-            element={
-              <Layout
-                authorisationStatus={authorisationStatus}
-                favoriteOffers={
-                  offers.filter((offer) => offer.isFavorite === true).length
-                }
-              />
-            }
+            element={<Layout authorisationStatus={authorisationStatus} />}
           >
             <Route
               index
