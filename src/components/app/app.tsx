@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { OfferPreview } from '../../shared-types';
+import { OfferFull } from '../../shared-types';
 import { AppRoute } from '../../const';
 import PrivateRoute from '../private-route/private-route';
 import { HelmetProvider } from 'react-helmet-async';
@@ -14,11 +14,13 @@ import ScrollToTop from '../scroll-to-top/scroll-to-top';
 
 export type MainPageScreenProps = {
   offerCount: number;
-  offers: OfferPreview[];
+  offers: OfferFull[];
 };
 
 function App({ offerCount, offers }: MainPageScreenProps): JSX.Element {
   const authorisationStatus = getAuthorisationStatus();
+
+  const selectedOffer = offers[0];
 
   return (
     <HelmetProvider>
@@ -27,15 +29,15 @@ function App({ offerCount, offers }: MainPageScreenProps): JSX.Element {
         <Routes>
           <Route
             path={AppRoute.Root}
-            element={<Layout authorisationStatus={authorisationStatus} />}
+            element={
+              <Layout authorisationStatus={authorisationStatus} />
+            }
           >
             <Route
               index
               element={<MainPage offerCount={offerCount} cards={offers} />}
             />
-
-            <Route path={AppRoute.OfferPage} element={<OfferPage />} />
-
+            <Route path={AppRoute.OfferPage} element={<OfferPage offer={selectedOffer} />} />
             <Route
               path={AppRoute.FavouritesPage}
               element={
@@ -44,7 +46,6 @@ function App({ offerCount, offers }: MainPageScreenProps): JSX.Element {
                 </PrivateRoute>
               }
             />
-
             <Route
               path={AppRoute.LoginPage}
               element={
@@ -56,7 +57,6 @@ function App({ offerCount, offers }: MainPageScreenProps): JSX.Element {
                 </PrivateRoute>
               }
             />
-
             <Route path="*" element={<Page404 />} />
           </Route>
         </Routes>
