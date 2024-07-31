@@ -4,7 +4,6 @@ import FavouriteCardsList from '../../components/favourite-cards-list/favourite-
 
 type FavoritesScreenProps = {
   offers: OfferPreview[];
-  city: string;
 };
 
 const groupedByCityOffers = (offers: OfferPreview[]) => {
@@ -22,21 +21,17 @@ const groupedByCityOffers = (offers: OfferPreview[]) => {
   return groupedOffers;
 };
 
-function FavouritesPage({ offers, city }: FavoritesScreenProps): JSX.Element {
+function FavouritesPage({ offers }: FavoritesScreenProps): JSX.Element {
   const favoriteOffers = offers.filter((offer) => offer.isFavorite === true);
 
   const groupedFavoriteOffers = groupedByCityOffers(favoriteOffers);
+
 
   return (
     <main className="page__main page__main--favorites">
       <Helmet>
         <title>6 Cities. Favorites</title>
       </Helmet>
-      <div className="favorites__locations locations locations--current">
-        <div className="locations__item">
-          <span>{city}</span>
-        </div>
-      </div>
       <div className="page__favorites-container container">
         <section className="favorites">
           <h1 className="favorites__title">Saved listing</h1>
@@ -46,7 +41,7 @@ function FavouritesPage({ offers, city }: FavoritesScreenProps): JSX.Element {
                 <li key={cityName} className="favorites__locations-items">
                   <div className="favorites__locations locations locations--current">
                     <div className="locations__item">
-                      <span>{city}</span>
+                      <span className="locations__item-link">{cityName}</span>
                     </div>
                   </div>
                   <FavouriteCardsList offers={cityOffers} />
