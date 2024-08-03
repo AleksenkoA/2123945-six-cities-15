@@ -15,7 +15,8 @@ export const AuthorisationStatus = {
   Unknown: 'UNKNOWN',
 } as const;
 
-export type AuthorisationStatusType = typeof AuthorisationStatus[keyof typeof AuthorisationStatus];
+export type AuthorisationStatusType =
+  (typeof AuthorisationStatus)[keyof typeof AuthorisationStatus];
 
 export type CitiesType = {
   name: string;
@@ -123,17 +124,5 @@ export const GALLERY_IMAGES = [
   'img/apartment-01.jpg',
 ];
 
-export const REVIEWS = [
-  {
-    id: 1,
-    date: 'April 2019',
-    user: {
-      name: 'Max',
-      avatarUrl: 'img/avatar-max.jpg',
-      isPro: false,
-    },
-    comment:
-      'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.',
-    rating: 4,
-  },
-];
+export const MIN_COMMENT_LENGTH = 50;
+export const MAX_COMMENT_LENGTH = 300;

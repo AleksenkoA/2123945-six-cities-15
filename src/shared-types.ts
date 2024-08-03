@@ -1,3 +1,4 @@
+import { ChangeEvent } from 'react';
 import { CITIES, SORTING_OPTIONS } from './const';
 
 export type RentType = 'apartment' | 'room' | 'house' | 'hotel';
@@ -106,6 +107,7 @@ export type OfferInsideListProps = {
 
 export type RatingItemProps = {
   rating: RatingType;
+  onChange: (evt: ChangeEvent<HTMLInputElement>) => void;
 };
 
 export type RatingType = {
