@@ -4,7 +4,7 @@ export const REVIEWS = [
     date: 'April 2019',
     user: {
       name: 'Max',
-      avatarUrl: 'img/avatar-max.jpg',
+      avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },
     comment:
@@ -27,7 +27,7 @@ export const REVIEWS = [
     id: 3,
     date: 'June 2021',
     user: {
-      name: 'Angelina',
+      name: 'Mira',
       avatarUrl: 'img/avatar-angelina.jpg',
       isPro: false,
     },

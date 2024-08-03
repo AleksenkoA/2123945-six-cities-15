@@ -18,13 +18,15 @@ export type ReviewsItemProps = {
 
 function ReviewItem({ review }: ReviewsItemProps): JSX.Element {
   const { user, comment, date, rating } = review;
+  const { avatarUrl } = user;
+
   return (
     <li className="reviews__item">
       <div className="reviews__user user">
         <div className="reviews__avatar-wrapper user__avatar-wrapper">
           <img
             className="reviews__avatar user__avatar"
-            src="img/avatar-max.jpg"
+            src={avatarUrl}
             width="54"
             height="54"
             alt="Reviews avatar"
