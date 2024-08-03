@@ -5,6 +5,7 @@ import SortingHeader from '../../components/sorting-header/sorting-header';
 import { Helmet } from 'react-helmet-async';
 import LocationsList from '../../components/cities-list/cities-list';
 import { OfferPreview } from '../../shared-types';
+import { useState } from 'react';
 
 export type MainPageScreenProps = {
   offerCount: number;
@@ -12,6 +13,10 @@ export type MainPageScreenProps = {
 };
 
 function MainPage({ offerCount, cards }: MainPageScreenProps): JSX.Element {
+  const [activeCard, setActiveCard] = useState<OfferPreview | null>();
+  const handleSelectActiveCard = (card?: OfferPreview) => {
+    setActiveCard(card);
+  };
   return (
     <>
       <Helmet>
@@ -41,10 +46,15 @@ function MainPage({ offerCount, cards }: MainPageScreenProps): JSX.Element {
                   <OptionsList />
                 </form>
                 <div className="cities__places-list places__list tabs__content">
-                  <CardsList cards={cards} />
+                  <CardsList
+                    cards={cards}
+                    onMouseHover={handleSelectActiveCard}
+                  />
                 </div>
               </section>
-              <Map />
+              <div className="cities__right-section">
+                <Map cards={cards} activeCard={activeCard} />
+              </div>
             </div>
           </div>
         </main>

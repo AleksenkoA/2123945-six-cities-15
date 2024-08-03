@@ -11,11 +11,27 @@ function PremiumBadge(): JSX.Element {
 
 function CardItem({
   card,
+  onMouseHover,
   className = 'cities__card',
 }: CardsItemProps): JSX.Element {
-  const { id, title, type, price, isPremium, previewImage } = card;
+  const handleMouseEnter = () => {
+    if (onMouseHover) {
+      onMouseHover(card);
+    }
+  };
+  const handleMouseLeave = () => {
+    if (onMouseHover) {
+      onMouseHover();
+    }
+  };
+
+  const { id, title, type, price, isPremium, previewImage, rating } = card;
   return (
-    <article className={`${className} place-card`}>
+    <article
+      className={`${className} place-card`}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       {isPremium && <PremiumBadge />}
       <div className="cities__image-wrapper place-card__image-wrapper">
         <Link to={`offer/${id}`}>
@@ -48,7 +64,7 @@ function CardItem({
                 width: '80%',
               }}
             />
-            <span className="visually-hidden">Rating</span>
+            <span className="visually-hidden">{rating}</span>
           </div>
         </div>
         <h2 className="place-card__name">
