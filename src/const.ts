@@ -116,12 +116,12 @@ export const INSIDE_OFFERS = [
 ];
 
 export const GALLERY_IMAGES = [
-  'img/room.jpg',
-  'img/apartment-01.jpg',
-  'img/apartment-02.jpg',
-  'img/apartment-03.jpg',
-  'img/studio-01.jpg',
-  'img/apartment-01.jpg',
+  { id: 1, src: 'img/room.jpg' },
+  { id: 2, src: 'img/apartment-01.jpg' },
+  { id: 3, src: 'img/apartment-02.jpg' },
+  { id: 4, src: 'img/apartment-03.jpg' },
+  { id: 5, src: 'img/studio-01.jpg' },
+  { id: 6, src: 'img/apartment-01.jpg' },
 ];
 
 export const MIN_COMMENT_LENGTH = 50;
