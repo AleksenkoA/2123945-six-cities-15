@@ -1,4 +1,5 @@
-import { GALLERY_IMAGES, INSIDE_OFFERS, REVIEWS } from '../../const';
+import { GALLERY_IMAGES, INSIDE_OFFERS } from '../../const';
+import { REVIEWS } from '../../mock-data/reviews';
 import Gallery from '../../components/gallery/gallery';
 import OfferInsideList from '../../components/offer-inside-list/offer-inside-list';
 import Map from '../../components/map/map';
@@ -60,7 +61,9 @@ function OfferPage({ offer }: OfferPageProps): JSX.Element {
                   />
                   <span className="visually-hidden">Rating</span>
                 </div>
-                <span className="offer__rating-value rating__value">{rating}</span>
+                <span className="offer__rating-value rating__value">
+                  {rating}
+                </span>
               </div>
               <ul className="offer__features">
                 <li className="offer__feature offer__feature--entire">
@@ -86,10 +89,18 @@ function OfferPage({ offer }: OfferPageProps): JSX.Element {
                 {host && (
                   <div className="offer__host-user user">
                     <div className="offer__avatar-wrapper offer__avatar-wrapper--pro user__avatar-wrapper">
-                      <img className="offer__avatar user__avatar" src={host.avatarUrl} width="74" height="74" alt="Host avatar"/>
+                      <img
+                        className="offer__avatar user__avatar"
+                        src={host.avatarUrl}
+                        width="74"
+                        height="74"
+                        alt="Host avatar"
+                      />
                     </div>
                     <span className="offer__user-name">{host.name}</span>
-                    {host.isPro && <span className="offer__user-status">Pro</span>}
+                    {host.isPro && (
+                      <span className="offer__user-status">Pro</span>
+                    )}
                   </div>
                 )}
                 <div className="offer__description">
@@ -98,7 +109,8 @@ function OfferPage({ offer }: OfferPageProps): JSX.Element {
               </div>
               <section className="offer__reviews reviews">
                 <h2 className="reviews__title">
-                  Reviews &middot; <span className="reviews__amount">{REVIEWS.length}</span>
+                  Reviews &middot;{' '}
+                  <span className="reviews__amount">{REVIEWS.length}</span>
                 </h2>
                 <ReviewsList reviews={REVIEWS} />
                 <ReviewsForm />
