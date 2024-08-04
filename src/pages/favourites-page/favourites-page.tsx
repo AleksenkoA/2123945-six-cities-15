@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { OfferPreview } from '../../shared-types';
 import FavouriteCardsList from '../../components/favourite-cards-list/favourite-cards-list';
+import { useState } from 'react';
 
 type FavoritesScreenProps = {
   offers: OfferPreview[];
@@ -22,10 +23,15 @@ const groupedByCityOffers = (offers: OfferPreview[]) => {
 };
 
 function FavouritesPage({ offers }: FavoritesScreenProps): JSX.Element {
+  const [activeCard, setActiveCard] = useState<OfferPreview | null>();
+  const handleSelectActiveCard = (card?: OfferPreview) => {
+    setActiveCard(card || null);
+  };
   const favoriteOffers = offers.filter((offer) => offer.isFavorite === true);
 
   const groupedFavoriteOffers = groupedByCityOffers(favoriteOffers);
 
+  console.log('activeCardFavPage', activeCard);
 
   return (
     <main className="page__main page__main--favorites">
@@ -44,7 +50,10 @@ function FavouritesPage({ offers }: FavoritesScreenProps): JSX.Element {
                       <span className="locations__item-link">{cityName}</span>
                     </div>
                   </div>
-                  <FavouriteCardsList offers={cityOffers} />
+                  <FavouriteCardsList
+                    offers={cityOffers}
+                    onMouseHover={handleSelectActiveCard}
+                  />
                 </li>
               )
             )}

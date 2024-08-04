@@ -7,14 +7,22 @@ import CardsList from '../../components/cards-list/cards-list';
 import ReviewsList from '../../components/review-list/review-list';
 import { Helmet } from 'react-helmet-async';
 import ReviewsForm from '../../components/review-form/review-form';
-import { OfferFull } from '../../shared-types';
+import { OfferFull, OfferPreview } from '../../shared-types';
 import { cards } from '../../mock-data/card-data';
+import { useState } from 'react';
 
 type OfferPageProps = {
   offer: OfferFull;
 };
 
 function OfferPage({ offer }: OfferPageProps): JSX.Element {
+  const [activeCard, setActiveCard] = useState<OfferPreview | null>();
+  const handleSelectActiveCard = (card?: OfferPreview) => {
+    setActiveCard(card || null);
+  };
+
+  console.log('activeCardOfferPage', activeCard);
+
   const {
     title,
     type,
@@ -117,7 +125,7 @@ function OfferPage({ offer }: OfferPageProps): JSX.Element {
               </section>
             </div>
           </div>
-          <Map />
+          <Map cards={cards} />
         </section>
         <div className="container">
           <section className="near-places places">
@@ -125,7 +133,7 @@ function OfferPage({ offer }: OfferPageProps): JSX.Element {
               Other places in the neighbourhood
             </h2>
             <div className="near-places__list places__list">
-              <CardsList cards={cards} />
+              <CardsList cards={cards} onMouseHover={handleSelectActiveCard} />
             </div>
           </section>
         </div>

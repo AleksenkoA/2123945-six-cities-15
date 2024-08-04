@@ -17,6 +17,9 @@ function MainPage({ offerCount, cards }: MainPageScreenProps): JSX.Element {
   const handleSelectActiveCard = (card?: OfferPreview) => {
     setActiveCard(card);
   };
+
+  console.log('activeCard', activeCard);
+
   return (
     <>
       <Helmet>
