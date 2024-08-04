@@ -18,8 +18,6 @@ function MainPage({ offerCount, cards }: MainPageScreenProps): JSX.Element {
     setActiveCard(card);
   };
 
-  console.log('activeCard', activeCard);
-
   return (
     <>
       <Helmet>

@@ -31,7 +31,6 @@ function Map({
 
   useEffect(() => {
     if (map && cards.length > 0) {
-      // проверка наличия cards
       const markerLayer = layerGroup().addTo(map);
       cards.forEach((card) => {
         const marker = new Marker({

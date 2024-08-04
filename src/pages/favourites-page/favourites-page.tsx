@@ -30,9 +30,6 @@ function FavouritesPage({ offers }: FavoritesScreenProps): JSX.Element {
   const favoriteOffers = offers.filter((offer) => offer.isFavorite === true);
 
   const groupedFavoriteOffers = groupedByCityOffers(favoriteOffers);
-
-  console.log('activeCardFavPage', activeCard);
-
   return (
     <main className="page__main page__main--favorites">
       <Helmet>
