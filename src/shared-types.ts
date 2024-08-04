@@ -22,7 +22,7 @@ export type LocationType = {
 export type CardsItemProps = {
   card: OfferPreview;
   className?: string;
-  onMouseHover?: (arg?: OfferPreview) => void;
+  onMouseHover?: (arg?: OfferPreview | undefined) => void;
 };
 
 export type OfferPreview = Pick<

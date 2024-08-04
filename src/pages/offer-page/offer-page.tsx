@@ -10,6 +10,9 @@ import ReviewsForm from '../../components/review-form/review-form';
 import { OfferFull, OfferPreview } from '../../shared-types';
 import { cards } from '../../mock-data/card-data';
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { offers } from '../../mock-data/offers';
+import Page404 from '../page-404/page-404';
 
 type OfferPageProps = {
   offer: OfferFull;
@@ -21,7 +24,12 @@ function OfferPage({ offer }: OfferPageProps): JSX.Element {
     setActiveCard(card || null);
   };
 
-  console.log('activeCardOfferPage', activeCard);
+  const { id } = useParams();
+  const offerInfo = offers.find((item: OfferPreview) => item.id === id);
+
+  if (typeof offerInfo === 'undefined') {
+    return <Page404 />;
+  }
 
   const {
     title,

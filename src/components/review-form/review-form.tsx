@@ -46,6 +46,7 @@ function ReviewsForm(): JSX.Element {
         placeholder="Tell how was your stay, what you like and what can be improved"
         value={comment}
         onChange={handleTextareaChange}
+        minLength={MIN_COMMENT_LENGTH}
       ></textarea>
       <div className="reviews__button-wrapper">
         <p className="reviews__help">
@@ -55,7 +56,6 @@ function ReviewsForm(): JSX.Element {
           <b className="reviews__text-amount">
             {MIN_COMMENT_LENGTH} characters
           </b>
-          .
         </p>
         <button
           className="reviews__submit form__submit button"
