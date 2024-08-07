@@ -15,6 +15,7 @@ const defaultIcon = new Icon({
   iconSize: [27, 39],
   iconAnchor: [13, 39],
 });
+
 const currentIcon = new Icon({
   iconUrl: 'img/pin-active.svg',
   iconSize: [27, 39],
@@ -23,7 +24,7 @@ const currentIcon = new Icon({
 
 function Map({
   className = 'cities__map',
-  cards = [], // значение по умолчанию
+  cards,
   activeCard,
 }: MapProps): JSX.Element {
   const mapRef = useRef(null);
