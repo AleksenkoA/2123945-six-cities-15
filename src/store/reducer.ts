@@ -1,9 +1,7 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { cards } from '../mock/cards';
 import { changeCity, getCards } from './action';
-// import { CITIES } from '../const.ts';
 import { OfferPreview } from '../shared-types.ts';
-// import { TCard } from '../mock/types.ts';
+import { cards } from '../mock-data/card-data.ts';
 
 export type initialStateType = {
   city: string;
@@ -18,8 +16,9 @@ const initialState: initialStateType = {
 const reducer = createReducer(initialState, (builder) => {
   builder
     .addCase(changeCity, (state, action) => {
-      state.city = action.payload.city;
+      state.city = action.payload.city.name;
     })
+
     .addCase(getCards, (state) => {
       state.cards = cards;
     });
